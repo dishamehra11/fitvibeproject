@@ -1,19 +1,21 @@
 import React from 'react'
-
 function Home() {
   return (
-    // <div>
-    //   <h4 className='subtitle'>YOUR WELLNESS JOURNEY</h4>
-    //   <h1 className='title'>Personalized Wellness for Real Results</h1>     
-    // </div>
-
     <section class="hero">
-  <p class="hero-subtitle">YOUR WELLNESS JOURNEY</p>
-  <h1 class="hero-title">Personalized Wellness<br></br>for Real Results</h1>
-  <a href="#" class="btn-primary">LEARN MORE</a>
-</section>
+      <div className=''>
+           <p class="hero-subtitle">YOUR WELLNESS JOURNEY</p>
+      <h1 class="hero-title">Personalized Wellness<br></br>for Real Results</h1>
+      <a href="about.js" class="btn-primary">LEARN MORE</a>
+      <div className='gym-box'>
+        <span><h3 >Find a Gym <br></br>Near You</h3> </span>
 
-    
+      </div>
+      <span>***** 4.5 | 765+REVIEWS</span>
+      </div>
+     
+    </section>
+
+
   )
 }
 
