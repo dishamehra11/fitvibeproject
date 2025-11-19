@@ -1,21 +1,27 @@
 import React from 'react'
+import { IoStarSharp } from "react-icons/io5";
+
 function Home() {
   return (
-    <section class="hero">
-      <div className=''>
-           <p class="hero-subtitle">YOUR WELLNESS JOURNEY</p>
-      <h1 class="hero-title">Personalized Wellness<br></br>for Real Results</h1>
-      <a href="about.js" class="btn-primary">LEARN MORE</a>
-      <div className='gym-box'>
-        <span><h3 >Find a Gym <br></br>Near You</h3> </span>
+    <section className="hero">
 
+      {/* LEFT SIDE CONTENT */}
+      <div className="hero-content">
+        <p className="hero-subtitle">YOUR WELLNESS JOURNEY</p>
+
+        <h1 class="hero-title">
+          Personalized Wellness <br></br>for Real Results
+        </h1>
+        <a href="about us" className="btn-primary">LEARN MORE</a>
+        <span className="rating-box"><IoStarSharp /><IoStarSharp /><IoStarSharp /><IoStarSharp /> 4.5 | 765+ REVIEWS</span>
       </div>
-      <span>***** 4.5 | 765+REVIEWS</span>
+
+      {/* LEFT CORNER GYM BOX */}
+      <div className="gym-box">
+        <h3>Find a Gym <br /> Near You</h3>
       </div>
-     
+
     </section>
-
-
   )
 }
 

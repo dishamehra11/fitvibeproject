@@ -1,57 +1,96 @@
-.logo{
-  height: 20%;
-  width: 20%;
+/* ===========================
+   HEADER / NAVBAR
+=========================== */
+
+/* Navbar background */
+.header-navbar {
+  background-color: #181e24 !important;
+  padding: 12px 0;
 }
 
-#navlink{
-  align-items: center;
+/* Container full width */
+.header-container {
   display: flex;
-  margin: 0 auto;
-  padding: 8px;
-  color: white;
+  align-items: center;
   justify-content: space-between;
-  max-width: 0 auto;
+  padding-left: 0;
+  padding-right: 0;
+  width: 100%;
 }
-         
-.appointment-btn{
-  background-color: brown;
+
+/* LEFT SIDE: Logo */
+.header-logo {
+  height: 55px;
+  width: auto;
+  margin-left: 20px; /* optional small gap from edge */
+}
+
+/* LEFT SIDE: Nav Links */
+.header-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-left: 40px; /* space between logo and links */
+}
+
+.header-links .nav-link {
+  color: white !important;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+/* RIGHT SIDE: Search + Appointment */
+.right-nav {
+  display: flex;
+  align-items: center;
+  margin-right: 20px; /* right edge distance */
+  gap: 15px;
+}
+
+/* Search icon */
+.search-icon {
   color: white;
-  padding: 6px 12px; 
-  margin-left: 200px;
-  margin-top: 2px; 
+  cursor: pointer;
+  font-size: 28px;
 }
 
-.subtitle{
-  color: chocolate;
-  margin-top: 70px;
-  padding: 50px;
-  font-family: Arial, Helvetica, sans-serif;
+/* Appointment button */
+.appointment-btn {
+  background-color: #d39b63;
+  border: none;
+  padding: 8px 22px;
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  text-transform: uppercase;
 }
 
-.title{
-  font-size: 50px;
-  font-style: oblique;
-  color: black;
+/* Button Hover */
+.appointment-btn:hover {
+  background-color: #c2854a;
 }
+
+/* ===========================
+   HERO SECTION
+=========================== */
 
 .hero {
   background-color: #1a0f0a;
-  padding: 120px 80px;
-   
-}
-/* .bg-image{
-  background-image: url("./assets/images/bg.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 100vh;
+  padding: 140px 0;
+  position: relative;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
+  min-height: 100vh;
+}
+
+/* LEFT CONTENT WRAPPER */
+.hero-content {
   color: #fff;
-  text-shadow:  0px 0px 10pxblack;
-} */
+  margin-left: 120px;
+}
 
 .hero-subtitle {
   font-family: "Inter", sans-serif;
@@ -60,33 +99,18 @@
   letter-spacing: 2px;
   color: #c78a56;
   text-transform: uppercase;
+  margin-bottom: 20px;
 }
 
 .hero-title {
   font-family: "Inter", sans-serif;
-  font-size: 72px;
-  font-weight: 600;
-  line-height: 1.1;
+  font-size: 60px;
+  font-weight: 700;
   color: #ffffff;
-  margin: 20px 0;
+  margin-bottom: 30px;
 }
 
-  .gym-box {
-  width: fit-content;
-  padding: 10px 20px;
-  text-align: center;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  color: #333;
-  background-color: oldlace;
-  margin-top: 50px; 
-}
-
-.gym-box h3 {
-  font-size: 15px;
-  line-height: 1.3;
-  font-weight: 500;
-}
-
+/* Hero Button */
 .btn-primary {
   font-family: "Inter", sans-serif;
   font-size: 15px;
@@ -96,13 +120,50 @@
   color: #fff;
   border-radius: 4px;
   display: inline-block;
+  margin-top: 10px;
 }
 
-.rating-box{
-  margin-top: 10px;
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
+/* Rating Box */
+.rating-box {
+  margin-top: 25px;
+  font-size: 10px;
+  display: block;
+  color: hsl(0, 0%, 100%);
+  cursor: pointer;
+  font-size: 28px;
+}
+
+/* Gym Box */
+.gym-box {
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+  background-color: oldlace;
+  padding: 14px 40px;
+  text-align: center;
+  color: #333;
+  border-radius: 3px;
+}
+
+.gym-box h3 {
   font-size: 15px;
-  color: #fff;
+  line-height: 1.3;
+  font-weight: 600;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+@media (max-width: 992px) {
+  .hero-content {
+    margin-left: 40px;
+  }
+  .header-links {
+    margin-left: 20px;
+  }
+  .gym-box {
+    padding: 10px 20px;
+    bottom: 20px;
+    left: 20px;
+  }
 }
