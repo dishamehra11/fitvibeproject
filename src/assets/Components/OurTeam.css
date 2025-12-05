@@ -1,0 +1,211 @@
+.team-section {
+    padding: 70px;
+    background: #faf7f4;
+}
+
+.team-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.team-left {
+    width: 40%;
+}
+
+.team-subtitle {
+    font-size: 14px;
+    color: #c08d6f;
+    margin: 10px 0 20px;
+    letter-spacing: 3px;
+    font-weight: 600;
+}
+
+.team-title {
+    font-size: 42px;
+    margin: 10px 0 20px;
+    line-height: 1.2;
+}
+
+.team-desc {
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.team-btn {
+    background: #b57a52;
+    color: #fff;
+    padding: 14px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.team-btn:hover {
+    opacity: 0.8;
+    background-color: black;
+}
+
+/* ---------------------- */
+/*      RIGHT SIDE GRID   */
+/* ---------------------- */
+.team-right {
+    width: 60%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+/* SINGLE CARD */
+.team-card {
+    position: relative;
+    width: 100%;
+    height: 360px;
+    border-radius: 12px;
+    overflow: hidden;
+
+    /* smooth animation */
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* HOVER ANIMATION (Lift + Shadow) */
+.team-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.25);
+}
+
+/* IMAGE STYLE */
+.team-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    /* smooth zoom animation */
+    transition: transform 0.6s ease;
+}
+
+/* Image Zoom */
+.team-card:hover img {
+    transform: scale(1.1);
+}
+
+/* OVERLAY TEXT */
+.team-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 25px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.75));
+    color: white;
+
+    transition: opacity 0.4s ease;
+}
+
+/* Overlay stronger on hover */
+.team-card:hover .team-overlay {
+    opacity: 1;
+}
+
+.team-overlay h3 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.team-overlay p {
+    font-size: 14px;
+    opacity: 0.85;
+    margin-top: 4px;
+}
+
+
+
+
+
+
+/* ============================
+   MOBILE & TABLET RESPONSIVE
+=============================== */
+
+/* Tablet (max-width: 992px) */
+@media (max-width: 992px) {
+    .team-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .team-left {
+        width: 100%;
+        text-align: center;
+    }
+
+    .team-title {
+        font-size: 32px;
+    }
+
+    .team-desc {
+        width: 90%;
+        margin: 0 auto 25px;
+    }
+
+    .team-right {
+        width: 100%;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .team-card {
+        height: 300px;
+    }
+}
+
+/* Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+    .team-right {
+        grid-template-columns: 1fr;  /* 1 image per row */
+        gap: 20px;
+    }
+
+    .team-card {
+        height: 320px;
+    }
+
+    .team-title {
+        font-size: 28px;
+    }
+
+    .team-subtitle {
+        font-size: 12px;
+        letter-spacing: 2px;
+    }
+}
+
+/* Small Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+    .team-section {
+        padding: 40px 20px;
+    }
+
+    .team-title {
+        font-size: 24px;
+    }
+
+    .team-desc {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .team-card {
+        height: 280px;
+    }
+}
+.sidebar-sticky{
+    /* position: sticky; */
+    /* top: 0; */
+    transition: all ease-in-out 0.5s;
+}
+

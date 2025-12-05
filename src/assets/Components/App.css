@@ -1,0 +1,111 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #111;
+  color: #fff;
+  padding: 15px 40px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links li {
+  cursor: pointer;
+}
+
+.appointment-btn {
+  background: #d88b34;
+  color: #fff;
+  padding: 10px 18px;
+  border: none;
+  cursor: pointer;
+}
+.appointment-btn :hover{
+  background: #0f0f0f;
+}
+
+/* HEADER */
+.header {
+  background: url("https://images.unsplash.com/photo-1599058917212-950a3dc48ed7")
+    center/cover no-repeat;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 32px;
+  text-shadow: 1px 1px 4px black;
+}
+
+/* APPOINTMENT FORM LAYOUT */
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.appointment-card {
+  display: flex;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+  max-width: 900px;
+}
+
+.img-section img {
+  width: 300px;
+  height: 100%;
+  object-fit: cover;
+}
+
+.form-section {
+  padding: 25px;
+  width: 100%;
+}
+
+.form-section label {
+  display: block;
+  margin-top: 12px;
+  font-weight: bold;
+}
+
+.form-section input,
+.form-section select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.rating {
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+.submit-btn {
+  margin-top: 20px;
+  background: #d88b34;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+}
+
+/* MAP SECTION */
+.map-section {
+  margin-top: 40px;
+}

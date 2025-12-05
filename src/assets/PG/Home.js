@@ -1,28 +1,45 @@
 import React from 'react'
-import { IoStarSharp } from "react-icons/io5";
+import About from '../Components/About';
+import { useNavigate } from 'react-router-dom';
+import OurServices from '../Components/OurServices';
+import LandingSection from '../Components/LandingSection';
+import OurTeam from '../Components/OurTeam';
+import InnerHappinessSection from '../Components/InnerHappinessSection';
+import TestimonialSection from '../Components/TestimonialSection';
+import Blogs from '../Components/Blogs';
 
 function Home() {
+  const Navigate = useNavigate();
+
   return (
-    <section className="hero">
+    <>
+      <section className="hero">
+        <div className="hero-content">
+          <p className="hero-subtitle">YOUR WELLNESS JOURNEY</p>
 
-      {/* LEFT SIDE CONTENT */}
-      <div className="hero-content">
-        <p className="hero-subtitle">YOUR WELLNESS JOURNEY</p>
+          <div className="hero-title">
+            <h1>
+              Personalized Wellness <br /> for Real Results
+            </h1>
+          </div>
 
-        <h1 class="hero-title">
-          Personalized Wellness <br></br>for Real Results
-        </h1>
-        <a href="about us" className="btn-primary">LEARN MORE</a>
-        <span className="rating-box"><IoStarSharp /><IoStarSharp /><IoStarSharp /><IoStarSharp /> 4.5 | 765+ REVIEWS</span>
-      </div>
+          <div>
+            <button className="btn-primary" onClick={() => Navigate("/About")}>
+              LEARN MORE →
+            </button>
+          </div>
+        </div>
+      </section>
 
-      {/* LEFT CORNER GYM BOX */}
-      <div className="gym-box">
-        <h3>Find a Gym <br /> Near You</h3>
-      </div>
-
-    </section>
-  )
+      <About />
+      <OurServices />
+      <LandingSection />
+      <OurTeam />
+      <InnerHappinessSection />
+      <TestimonialSection />
+      <Blogs />
+    </>
+  );
 }
 
-export default Home
+export default Home;

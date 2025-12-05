@@ -1,0 +1,225 @@
+/* MAIN SECTION */
+.landing {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 100px 100px 0 100px;
+  background: #3a2414;
+  color: #fff;
+  position: relative;
+}
+
+.landing-content {
+  width: 40%;
+}
+
+.welcome {
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: #e6c49f;
+}
+
+.title {
+  font-size: 30px;
+  line-height: 1.2;
+  margin: 20px 0;
+}
+
+.desc {
+  margin: 15px 0 30px;
+  line-height: 1.6;
+  max-width: 90%;
+}
+
+.contact-btn {
+  background: #e6c49f;
+  padding: 12px 25px;
+  color: #3a2414;
+  font-weight: 600;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.contact-btn:hover {
+  background: #ece7e7df;
+  color: #141414;
+}
+
+/* Reviews */
+.reviews {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.review-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+/* Right Side Image */
+.landing-image {
+    width: 20%;
+}
+
+.image-girls {
+position: absolute;
+    padding-top: 45%;
+    width: 33%;
+    height: 100%;
+    margin: -168px 0px 0px -187px;
+}
+.image-girls img{
+    position:absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height:100%;
+    object-fit:cover;
+    /* z-index: 999; */
+}
+
+/* Side Content */
+.side-content {
+  width: 30%;
+}
+.features{
+  padding-left: 0;
+}
+
+.features li {
+  margin: 10px 0;
+  list-style: none;
+}
+
+.count {
+  font-size: 50px;
+  margin-top: 20px;
+  color: #e6c49f;
+}
+
+/* BOOK BUTTON */
+.book-btn {
+  background: #b57a50;
+  color: white;
+  padding: 12px 25px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-flex;
+  font-weight: bold;
+}
+
+.about-book-btn p {
+  color: #ece6e6;
+}
+
+.about-book-btn b {
+  color: #e2dddd;
+}
+
+.about-book-btn :hover {
+  color: #b3784f;
+}
+
+
+/* ================================
+        RESPONSIVE DESIGN
+================================ */
+
+/* Tablets & small laptops */
+@media (max-width: 1024px) {
+  .landing {
+    padding: 70px 40px;
+    gap: 30px;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  /* .landing-image img {
+    width: 300px;
+  } */
+
+  .count {
+    font-size: 42px;
+  }
+}
+
+/* Tablets */
+@media (max-width: 900px) {
+  .landing {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .landing-content,
+  .side-content {
+    width: 100%;
+  }
+
+  .desc {
+    max-width: 100%;
+  }
+
+  .landing-image img {
+    margin: 20px auto;
+  }
+
+  .reviews {
+    justify-content: center;
+  }
+
+  .side-content {
+    margin-top: 30px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .landing {
+    padding: 50px 20px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .landing-image img {
+    width: 260px;
+  }
+
+  .count {
+    font-size: 36px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 420px) {
+  .landing {
+    padding: 40px 15px;
+  }
+
+  .title {
+    font-size: 22px;
+  }
+
+  .desc {
+    font-size: 14px;
+  }
+
+  .landing-image img {
+    width: 220px;
+  }
+
+  .count {
+    font-size: 30px;
+  }
+}
