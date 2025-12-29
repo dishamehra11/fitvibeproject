@@ -1,6 +1,7 @@
 import React from "react";
 import "./Footer.css";
 import logowhite from '../images/logowhite.png';
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -10,9 +11,8 @@ const Footer = () => {
         {/* Left Section */}
         <div className="footer-left">
           <h2 className="logo">
-            {/* <span className="fit">FiT</span>V<span className="ibe">iBE</span> */}
-            <img src={logowhite} alt="logo" className="header-logo"/>
-           
+            <img src={logowhite} alt="logo" className="header-logo" />
+
           </h2>
           <p className="footer-text">
             Are you ready to take your fitness to the next level?
@@ -50,12 +50,12 @@ const Footer = () => {
         <div className="footer-col">
           <h3>Quicklinks</h3>
           <ul>
-            <li>About Us</li>
-            <li>Testimonial</li>
-            <li>Our Team</li>
-            <li>Latest Articles</li>
-            <li>Refund & Returns</li>
-            <li>Privacy Policy</li>
+            <li><Link to="/aboutus" className="nav-link">About Us</Link></li>
+            <li><Link to="/ourservices" className="nav-link">Our Team</Link></li>
+            <li><Link to="/blog" className="nav-link">Blog</Link></li>
+            <li><Link to="/shop" className="nav-link">Shop</Link></li>
+            <li><Link to="/team" className="nav-link">Team</Link></li>
+            <li><Link to="/contact" className="nav-link"> Contact Us</Link></li>
           </ul>
         </div>
 
@@ -73,8 +73,6 @@ const Footer = () => {
             <input type="email" placeholder="Email Address" />
             <button>➤</button>
           </div>
-
-          {/* <span className="error-msg">Must Fill Required Details.</span> */}
         </div>
       </div>
 

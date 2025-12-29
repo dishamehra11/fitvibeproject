@@ -1,168 +1,219 @@
+/* =========================
+   SERVICES SECTION
+========================= */
+
 .services-section {
-    width: 100%;
-    padding: 20px 0;
-    background: #faf6f2;
+  padding: 50px 0;
 }
 
 .services-container {
-    /* width: 90%; */
-    margin-left: auto;
-    padding: 80px;
+  width: 90%;
+  margin: auto;
 }
 
-/* ---------------- TOP FLEX ---------------- */
+/* ---------- TOP PART ---------- */
+
 .top-wrapper {
-    display: flex;
-    /* justify-content: space-between; */
-    align-items: flex-start;
-    /* margin-bottom: 70px; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
 }
 
-/* LEFT SIDE */
-.left-box {
-    max-width: 72%;
-    width: 100%;
+.service-hero {
+  background-image: url('../images/bg7.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  height: 500px;
 }
 
 .small-heading {
-    color: #b57a50;
-    font-size: 14px;
-    letter-spacing: 2px;
+  color: #d39b63;
+  font-size: 14px;
+  letter-spacing: 2px;
 }
 
 .main-title {
-    font-size: 42px;
-    line-height: 1.25;
-    font-weight: 700;
-    color: #222;
-    margin: 15px 0 30px;
-
+  font-size: 38px;
+  font-weight: 700;
+  margin-top: 10px;
 }
 
-/* NUMBERS */
-.numbers {
-    /* flex-direction: column;  */
-    display: flex;
-    gap: 35px;
-    padding: -2px 0px 0px;
-    margin: -5px 0px 0px;
-}
-
-.numbers div {
-    align-items: center;
-    gap: 6px;
-}
-
-/* NUMBER VALUE (10+, 8k+) */
-.numbers h3 {
-    transition: 0.3s ease;
-    cursor: pointer;
-}
-
-.numbers h3:hover {
-    color: #b57a50;
-    transform: scale(1.12);
-}
-
-/* NUMBER LABEL (Yoga Coaches, Happy Clients) */
-.numbers p {
-    transition: 0.3s ease;
-    cursor: pointer;
-}
-
-.numbers p:hover {
-    color: #b57a50;
-}
-
-
-/* BOOK BUTTON */
-.book-btn {
-    background: #b57a50;
-    color: white;
-    display: flex;
-}
-
-.about-book-btn p {
-    color: #222;
-}
-
-.about-book-btn b {
-    color: #222;
-}
-
-
-/* RIGHT SIDE BUTTON */
 .services-right-btn {
-    background-color: #1a1919;
-    color: #f1efed;
-    border: none;
-    padding: 12px 24px;
-    cursor: pointer;
-    font-weight: 600;
-    transition: 0.3s;
-    max-width: 50%;
-    /* width: 100%; */
-    margin-left: auto;
+  background: #d39b63;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
 }
 
 .services-right-btn:hover {
-    background: #b57a50;
-    color: white;
+  background: #000;
+  opacity: 0.8;
 }
 
-/* ---------------- CARDS ---------------- */
-.services-grid {
-    display: flex;
-    gap: 30px;
-    padding: 0px;
+/* ---------- GRID (3 + 3) ---------- */
+
+.services-grid-2row {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  margin-top: 30px;
 }
+
+.services-grid-2row .row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+/* ---------- CARD ---------- */
 
 .service-card {
-    /* width: 33%; */
-    width: 220px;
-    background: #fff;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0px 5px 25px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
 }
 
 .service-card img {
-    width: 100%;
-    height: 185px;
-    border-radius: 12px;
-    object-fit: cover;
-    margin-bottom: 15px;
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 12px;
 }
 
 .service-card h3 {
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 6px;
-    color: #333;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 6px;
 }
 
 .service-card p {
-    font-size: 14px;
-    color: #444;
-    display: flex;
+  opacity: 0.7;
+  font-size: 15px;
 }
 
-.my-card-row {
-    display: flex;
-    gap: 20px;
-    /* Cards vachche space */
+/* ---------- BOOK NOW ---------- */
+
+.about-book-btn {
+  display: flex;
+  align-items: center;
+  margin-top: 40px;
+  text-decoration: none;
+}
+
+.calendar-icon {
+  background: #d39b63;
+  color: white;
+  padding: 12px;
+  border-radius: 50%;
+  font-size: 20px;
+}
+
+.calendar-text {
+  margin-left: 12px;
+}
+
+.calendar-text p {
+  margin: 0;
+  opacity: 0.8;
+}
+
+.calendar-text h6 {
+  margin: 0;
+  font-weight: 700;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+/* Tablet */
+@media (max-width: 992px) {
+  .top-wrapper {
+    flex-direction: column;
     align-items: flex-start;
-    /* width: 310%; */
+    gap: 20px;
+  }
+
+  .main-title {
+    font-size: 32px;
+  }
+
+  .services-grid-2row .row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .service-card img {
+    height: 220px;
+  }
+
+  .about-book-btn {
+    justify-content: center;
+  }
 }
 
-.service-card {
-    width: 33.33%;
-    /* Fixed width so they align horizontally */
+/* Mobile */
+@media (max-width: 768px) {
+  .services-section {
+    padding: 40px 0;
+  }
+
+  .top-wrapper {
     text-align: center;
+    align-items: center;
+  }
+
+  .services-right-btn {
+    margin-top: 10px;
+  }
+
+  .services-grid-2row .row {
+    grid-template-columns: 1fr;
+  }
+
+  .service-card img {
+    height: 200px;
+  }
+
+  .about-book-btn {
+    justify-content: center;
+  }
 }
 
-.service-card img {
-    width: 100%;
-    margin-bottom: 10px;
-    /* Image and text vachche space */
+/* Small Mobile */
+@media (max-width: 480px) {
+  .main-title {
+    font-size: 26px;
+  }
+
+  .small-heading {
+    font-size: 12px;
+    letter-spacing: 1.5px;
+  }
+
+  .service-card {
+    padding: 16px;
+  }
+
+  .service-card img {
+    height: 180px;
+  }
+
+  .calendar-icon {
+    padding: 10px;
+    font-size: 18px;
+  }
 }

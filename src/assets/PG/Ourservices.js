@@ -1,109 +1,113 @@
-// import React from "react";
-// import { Link } from 'react-router-dom';
-// const Ourservices = () => {
-//   return (
-//     <>
-//        <section
-//             className="service-hero">
-//             <div className="overlay"></div>
-    
-//             <div className="hero-content" >
-//               <h1>Our Services</h1>
-    
-//               <nav className='d-block'>
-//                 <ul className='breadcrumb'>
-//                   {/* <FaGreaterThan size={8}/> */}
-//                    <li className='breadcrumb-item'><Link to="/">Home </Link> </li>
-//                   <li className='breadcrumb-item'>Our Services</li> 
-//                 </ul>
-//               </nav>
-       
-//             </div >
-//           </section >
-//     </>
-//   );
-// };
-
-// export default Ourservices;
-
-
-
 import React from "react";
 import { Link } from "react-router-dom";
-// import "./OurServices.css";
 
-const servicesData = [
-  {
-    image: "/images/lifestyle.jpg",
-    title: "Lifestyle Coaching",
-    icon: "🏃‍♀️",
-  },
-  {
-    image: "/images/recovery.jpg",
-    title: "Recovery & Regeneration",
-    icon: "💪",
-  },
-  {
-    image: "/images/mental.jpg",
-    title: "Mental Wellness",
-    icon: "🧘‍♀️",
-  },
-  {
-    image: "/images/nutrition.jpg",
-    title: "Nutrition Coaching",
-    icon: "🥗",
-  },
-  {
-    image: "/images/group.jpg",
-    title: "Group Fitness",
-    icon: "🔥",
-  },
-  {
-    image: "/images/personal.jpg",
-    title: "Personal Training",
-    icon: "🏋️",
-  },
-];
+// Correct Image Imports
+import ExImage from "../images/ex1.jpg";
+import WorkoutImage from "../images/Workout.jpg";
+import ExImage3 from "../images/ex3.webp";
 
-function OurServices() {
-  return (
-    <>
-      {/* ===== HERO SECTION ===== */}
-      <section className="service-hero">
-        <div className="overlay"></div>
+import "../Components/OurServices.css"; // <-- your CSS
 
-        <div className="hero-content">
-          <h1>Our Services</h1>
+function Ourservices() {
+    // const navigate = useNavigate();
 
-          <nav className="d-block">
-            <ul className="breadcrumb">
-              <li className="breadcrumb-item">
-                <Link to="/">Home</Link>
-              </li>
-              <li className="breadcrumb-item">Our Services</li>
-            </ul>
-          </nav>
-        </div>
-      </section>
+    return (
+        <>
+            {/* ======================================================
+                    🔥 HERO SECTION (TOP BANNER)
+            ======================================================= */}
+            <section className="service-hero">
+                <div className="overlay"></div>
 
-      {/* ===== SERVICES GRID ===== */}
-      <section className="services-section">
-        <div className="services-grid">
-          {servicesData.map((item, index) => (
-            <div key={index} className="service-card">
-              <img src={item.image} alt={item.title} className="service-img" />
+                <div className="hero-content">
+                    <h1>Our Services</h1>
 
-              <div className="service-icon">{item.icon}</div>
+                    <nav className="d-block">
+                        <ul className="breadcrumb">
+                            <li className="breadcrumb-item">
+                                <Link to="/">Home</Link>
+                            </li>
+                            <li className="breadcrumb-item">Our Services</li>
+                        </ul>
+                    </nav>
+                </div>
+            </section>
 
-              <h3 className="service-title">{item.title}</h3>
-            </div>
-          ))}
-        </div>
-      </section>
-    </>
-  );
+
+            {/* ======================================================
+                    🔥 MAIN SERVICES SECTION
+            ======================================================= */}
+            <section className="services-section">
+                <div className="services-container">
+
+                    {/* Top Row */}
+                    <div className="top-wrapper">
+                        <div className="left-box">
+                            <p className="small-heading">OUR SERVICES</p>
+
+                            <h1 className="main-title">
+                                Transform Your Body,Soothe Your<br></br> Soul with Yoga
+                            </h1>
+                        </div>
+
+                        {/* <button
+                            className="services-right-btn"
+                            onClick={() => navigate("/our-services")}>
+                            OUR SERVICES →
+                        </button> */}
+                    </div>
+
+
+                    {/* 3 + 3 GRID  */}
+                    <div className="services-grid-2row">
+
+                        {/* ROW 1 */}
+                        <div className="row">
+                            <div className="service-card">
+                                <img src={ExImage} alt="" />
+                                <h3>Lifestyle Coaching</h3>
+                                <p>Work out anytime..</p>
+                            </div>
+
+                            <div className="service-card">
+                                <img src={WorkoutImage} alt="" />
+                                <h3>Recovery & Regeneration</h3>
+                                <p>Improve flexibility...</p>
+                            </div>
+
+                            <div className="service-card">
+                                <img src={ExImage3} alt="" />
+                                <h3>Mental Wellness</h3>
+                                <p>Calm your mind...</p>
+                            </div>
+                        </div>
+
+
+                        {/* ROW 2 */}
+                        <div className="row">
+                            <div className="service-card">
+                                <img src={ExImage} alt="" />
+                                <h3>Strength Training</h3>
+                                <p>Build strength...</p>
+                            </div>
+
+                            <div className="service-card">
+                                <img src={WorkoutImage} alt="" />
+                                <h3>Fat Loss Program</h3>
+                                <p>Burn calories effectively...</p>
+                            </div>
+
+                            <div className="service-card">
+                                <img src={ExImage3} alt="" />
+                                <h3>Yoga Therapy</h3>
+                                <p>Heal your body...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </>
+    );
 }
 
-export default OurServices;
-
-
+export default Ourservices;

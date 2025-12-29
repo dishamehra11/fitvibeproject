@@ -36,14 +36,10 @@ const TestimonialSection = () => {
 
       {/* RIGHT IMAGE SECTION */}
       <div className="right">
-        {/* <div className="circle-bg"></div> */}
         <div className="i1">
         <img src={testimonial} className="testimonial" alt="ex" />
         </div>
-        {/* <img src={badge} className="badge" alt="img" /> */}
       </div>
-    
-      {/* </div> */}
     </section>
   );
 };

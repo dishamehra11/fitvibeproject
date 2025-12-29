@@ -2,42 +2,95 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { CiSearch } from "react-icons/ci";
-import { Link, useNavigate } from 'react-router-dom';
+import { CiSearch, CiUser } from "react-icons/ci";
+import { AiOutlinePoweroff } from "react-icons/ai";
+import { NavLink, useNavigate, useLocation } from 'react-router-dom';
 import logowhite from '../images/logowhite.png';
+import { useEffect, useState } from 'react';
 
 function Header() {
-  const Navigate = useNavigate();
+  const navigate = useNavigate();
+  const location = useLocation();
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  // ✅ CHECK LOGIN STATUS ON ROUTE CHANGE
+  useEffect(() => {
+    setIsLoggedIn(localStorage.getItem("isLoggedIn") === "true");
+  }, [location.pathname]);
+
+  // ✅ LOGOUT
+  const handleLogout = () => {
+    localStorage.removeItem("isLoggedIn");
+    localStorage.removeItem("loggedUser");
+    setIsLoggedIn(false);
+    navigate("/");
+  };
+
+  // ✅ APPOINTMENT CLICK LOGIC
+  const handleAppointmentClick = () => {
+    const loggedIn = localStorage.getItem("isLoggedIn") === "true";
+
+    if (loggedIn) {
+      navigate("/appointment");
+    } else {
+      navigate("/login", {
+        state: { redirectTo: "/appointment" },
+      });
+    }
+  };
 
   return (
     <Navbar expand="lg" className="header-navbar">
       <Container fluid className="header-container">
 
         {/* LOGO */}
-        <div className="left-nav"></div>
-        <img src={logowhite} alt="logo" className="header-logo" />
-        <Nav className="ms-4"></Nav>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ms-auto header-links">
+        <NavLink to="/">
+          <img src={logowhite} alt="logo" className="header-logo" />
+        </NavLink>
 
-            <Link to="/" className="nav-link">HOME</Link>
-            <Link to="/aboutus" className="nav-link">ABOUT US</Link>
-            <Link to="/ourservices" className="nav-link">OUR SERVICES</Link>
-            <Link to="/blog" className="nav-link">BLOG</Link>
-            <Link to="/shop" className="nav-link">SHOP</Link>
+        {/* RIGHT SIDE */}
+        <div className="header-right">
 
-            {/* SEARCH ICON */}
-            <div className="right-nav"></div>
-            <CiSearch />
-
-            {/* APPOINTMENT BUTTON */}
-            <button className="appointment-btn" onClick={() => Navigate("/appoinment")}>
-              APPOINTMENT →
-            </button>
-
+          {/* NAV LINKS */}
+          <Nav className="header-links">
+            <NavLink to="/" end className="nav-link">HOME</NavLink>
+            <NavLink to="/aboutus" className="nav-link">ABOUT US</NavLink>
+            <NavLink to="/ourservices" className="nav-link">OUR SERVICES</NavLink>
+            <NavLink to="/blog" className="nav-link">BLOG</NavLink>
+            <NavLink to="/shop" className="nav-link">SHOP</NavLink>
+            <NavLink to="/contact" className="nav-link">CONTACT US</NavLink>
           </Nav>
-        </Navbar.Collapse>
+
+          {/* SEARCH ICON */}
+          <CiSearch className="search-icon" />
+
+          {/* LOGIN ICON */}
+          {!isLoggedIn && (
+            <CiUser
+              className="login-icon"
+              title="Login"
+              onClick={() => navigate("/login")}
+            />
+          )}
+
+          {/* LOGOUT ICON */}
+          {isLoggedIn && (
+            <AiOutlinePoweroff
+              className="logout-icon"
+              title="Logout"
+              onClick={handleLogout}
+            />
+          )}
+
+          {/* APPOINTMENT BUTTON */}
+          <button
+            className="appointment-btn"
+            onClick={handleAppointmentClick}
+          >
+            APPOINTMENT →
+          </button>
+
+        </div>
       </Container>
     </Navbar>
   );

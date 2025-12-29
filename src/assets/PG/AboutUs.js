@@ -5,10 +5,10 @@ import TestimonialSection from '../Components/TestimonialSection'
 import { Link } from 'react-router-dom';
 
 function AboutUs() {
-  
+
   return (
     <>
-    
+
       <section
         className="about-hero">
         <div className="overlay"></div>
@@ -22,13 +22,9 @@ function AboutUs() {
               <li className='breadcrumb-item'>About us</li>
             </ul>
           </nav>
-          {/* <p className="breadcrumb" onClick={() => Navigate("/Home")}>
-            Home <span> ›  About Us</span>
-          </p> */}
-
         </div >
       </section >
-    
+
       < About />
       <OurTeam />
       <TestimonialSection />

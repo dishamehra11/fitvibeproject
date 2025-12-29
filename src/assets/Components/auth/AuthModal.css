@@ -1,0 +1,140 @@
+/* FULL PAGE CENTER */
+.login-page {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #2a160b, #0c0603);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Poppins", sans-serif;
+}
+
+/* CARD */
+.login-form {
+  background: linear-gradient(180deg, #1b0e07, #120804);
+  padding: 40px;
+  width: 380px;
+  border-radius: 14px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+  animation: fadeIn 0.6s ease;
+}
+
+/* TITLE */
+.login-form h2 {
+  color: #fff;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  color: #c9a88d;
+  text-align: center;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+/* INPUT */
+.login-form input {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 16px;
+  background: transparent;
+  border: 1px solid #5c3a23;
+  border-radius: 6px;
+  color: #fff;
+}
+
+.login-form input::placeholder {
+  color: #bda48a;
+}
+
+.login-form input:focus {
+  outline: none;
+  border-color: #c58b5a;
+}
+
+/* PASSWORD */
+.password-box {
+  position: relative;
+}
+
+.toggle {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  cursor: pointer;
+}
+
+/* OPTIONS */
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  color: #c9a88d;
+  margin-bottom: 18px;
+}
+
+.options input {
+  margin-right: 5px;
+}
+
+.forgot {
+  cursor: pointer;
+}
+
+/* ERROR */
+.error {
+  color: #ff6b6b;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* BUTTON */
+.login-form button {
+  width: 100%;
+  padding: 12px;
+  background: #c58b5a;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-form button:hover {
+  background: #e0a66c;
+  transform: translateY(-2px);
+}
+
+/* LINKS */
+.switch-text {
+  text-align: center;
+  margin-top: 18px;
+  color: #c9a88d;
+}
+
+.switch-text a {
+  color: #e0a66c;
+  text-decoration: none;
+}
+
+/* SECURITY */
+.secure-text {
+  text-align: center;
+  font-size: 12px;
+  margin-top: 15px;
+  color: #9e836d;
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

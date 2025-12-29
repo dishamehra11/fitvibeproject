@@ -1,10 +1,8 @@
 import React from "react";
 import "./LandingSection.css";
-import { IoCalendarSharp } from "react-icons/io5";
-// import { useNavigate } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 const LandingSection = () => {
-    // const navigate = useNavigate();
     return (
         <section className="landing">
             <div className="landing-content">
@@ -17,10 +15,9 @@ const LandingSection = () => {
                     sustainable—so you can feel your best every day.
                 </p>
 
-                <button className="contact-btn">CONTACT US →</button>
+                <Link className="btn contact-btn" to='/contact'>CONTACT US →</Link>
 
                 <div className="reviews">
-                    {/* <img src="/users.png" alt="users" className="review-img" /> */}
                     <div>
                         <p>Reviewed by 1.5 million clients</p>
                         <span>⭐⭐⭐⭐⭐ on Trustpilot</span>
@@ -48,17 +45,6 @@ const LandingSection = () => {
                     No strict diets, just nourishing your body with delicious,
                     wholesome food! Start making small changes today.
                 </p>
-
-                <a href="Appoinment" className="about-book-btn">
-                    <div className="calendar-icon">
-                        <IoCalendarSharp /><span></span>
-                    </div>
-                    <div className="calendar-text">
-                        <p>Book Now</p>
-                        <h6><b>Book Your Class</b></h6>
-                    </div>
-                </a>
-
             </div>
         </section>
     );
