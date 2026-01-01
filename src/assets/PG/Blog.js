@@ -30,22 +30,25 @@ const blogPosts = [
 function Blog() {
   return (
     <>
+      {/* HERO SECTION */}
       <section className="blog-hero">
         <div className="overlay"></div>
-        <div className="blog-content">
+        <div className="container blog-content">
           <h1 className='page-title'>Latest Posts</h1>
-          <nav className='d-block'>
+          <nav className='breadcrumb-nav'>
             <ul className='breadcrumb'>
               <li className='breadcrumb-item'><Link to="/">Home</Link></li>
-              <li className='breadcrumb-item'>Blog</li>
+              <li className='breadcrumb-item active'>Blog</li>
             </ul>
           </nav>
         </div>
       </section>
 
+      {/* BLOG SECTION */}
       <Container>
-        <section>
+        <section className="blog-section">
           <div className="blog-layout">
+
             {/* LEFT SIDE BLOG LIST */}
             <div className="blog-left">
               {blogPosts.map((post) => (
@@ -57,7 +60,6 @@ function Blog() {
                     <p className="desc">
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.
                     </p>
-                    {/* ✅ Dynamic READ MORE button */}
                     <Link to={`/blog/${post.id}`}>
                       <button className="read-more">READ MORE →</button>
                     </Link>
@@ -65,7 +67,7 @@ function Blog() {
                 </div>
               ))}
 
-              {/* PAGINATION (optional, static for now) */}
+              {/* PAGINATION */}
               <div className="pagination">
                 <button className="active">1</button>
                 <button>2</button>
@@ -107,6 +109,7 @@ function Blog() {
                 <button className="contact-btn">CONTACT US</button>
               </div>
             </div>
+
           </div>
         </section>
       </Container>

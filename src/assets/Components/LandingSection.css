@@ -1,4 +1,4 @@
-/* ================= MAIN SECTION ================= */
+/* ================= DESKTOP / MAIN SECTION ================= */
 
 .landing {
   display: flex;
@@ -71,13 +71,17 @@
 
 .image-girls {
   position: relative;
-  width: 100%;
+  margin: -339px -30px 0px -70px;
+  height: 100%;
 }
 
 .image-girls img {
   width: 100%;
   height: auto;
   object-fit: cover;
+  top: 0;
+  position: absolute;
+  left: 0;
 }
 
 /* RIGHT CONTENT */
@@ -127,7 +131,7 @@
   border-color: #f9f6f6;
 }
 
-/* ================= TABLET ================= */
+/* ================= TABLET (1024px) ================= */
 
 @media (max-width: 1024px) {
   .landing {
@@ -143,7 +147,7 @@
   }
 }
 
-/* ================= TABLET & MOBILE ================= */
+/* ================= TABLET & SMALL DESKTOP (900px) ================= */
 
 @media (max-width: 900px) {
   .landing {
@@ -166,13 +170,14 @@
   }
 
   .image-girls img {
-    max-width: 320px;
+    /* max-width: 320px; */
     margin: 30px auto;
     display: block;
+    position: relative;
   }
 }
 
-/* ================= MOBILE ================= */
+/* ================= MOBILE (600px) ================= */
 
 @media (max-width: 600px) {
   .landing {
@@ -184,7 +189,10 @@
   }
 
   .image-girls img {
-    max-width: 260px;
+    /* max-width: 260px; */
+  }
+  .image-girls{
+    margin: unset;
   }
 
   .count {
@@ -192,7 +200,7 @@
   }
 }
 
-/* ================= SMALL MOBILE ================= */
+/* ================= SMALL MOBILE (420px) ================= */
 
 @media (max-width: 420px) {
   .title {
@@ -203,9 +211,9 @@
     font-size: 14px;
   }
 
-  .image-girls img {
+  /* .image-girls img {
     max-width: 220px;
-  }
+  } */
 
   .count {
     font-size: 30px;

@@ -43,7 +43,7 @@ function Shop() {
 
   return (
     <>
-      {/* 🔥 HERO SECTION */}
+      {/* HERO SECTION */}
       <section
         className="shop-hero"
         style={{
@@ -54,16 +54,12 @@ function Shop() {
         }}
       >
         <div className="overlay"></div>
-
-        <div className="hero-content">
+        <div className="container hero-content">
           <h1>Shop</h1>
-
-          <nav className="d-block">
+          <nav className="breadcrumb-nav">
             <ul className="breadcrumb">
-              <li className="breadcrumb-item">
-                <Link to="/">Home</Link>
-              </li>
-              <li className="breadcrumb-item">Shop</li>
+              <li className="breadcrumb-item"><Link to="/">Home</Link></li>
+              <li className="breadcrumb-item active">Shop</li>
             </ul>
           </nav>
         </div>
@@ -72,7 +68,7 @@ function Shop() {
       {/* MAIN SHOP */}
       <div className="shop-wrapper">
         {/* Sidebar */}
-        <div className="sidebar">
+        <aside className="sidebar">
           <h3>Search</h3>
           <input
             type="text"
@@ -93,10 +89,10 @@ function Shop() {
               </li>
             ))}
           </ul>
-        </div>
+        </aside>
 
         {/* Products Area */}
-        <div className="shop-content">
+        <main className="shop-content">
           <div className="sorting-bar">
             <p>Showing {filteredProducts.length} results</p>
 
@@ -123,11 +119,10 @@ function Shop() {
                   <button className="shop-btn">View Product</button>
                 </Link>
 
-
               </div>
             ))}
           </div>
-        </div>
+        </main>
       </div>
     </>
   );

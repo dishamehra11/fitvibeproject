@@ -13,12 +13,10 @@ function Header() {
   const location = useLocation();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  // ✅ CHECK LOGIN STATUS ON ROUTE CHANGE
   useEffect(() => {
     setIsLoggedIn(localStorage.getItem("isLoggedIn") === "true");
   }, [location.pathname]);
 
-  // ✅ LOGOUT
   const handleLogout = () => {
     localStorage.removeItem("isLoggedIn");
     localStorage.removeItem("loggedUser");
@@ -26,21 +24,17 @@ function Header() {
     navigate("/");
   };
 
-  // ✅ APPOINTMENT CLICK LOGIC
   const handleAppointmentClick = () => {
     const loggedIn = localStorage.getItem("isLoggedIn") === "true";
-
     if (loggedIn) {
       navigate("/appointment");
     } else {
-      navigate("/login", {
-        state: { redirectTo: "/appointment" },
-      });
+      navigate("/login", { state: { redirectTo: "/appointment" } });
     }
   };
 
   return (
-    <Navbar expand="lg" className="header-navbar">
+    <Navbar expand="lg" className="header-navbar" bg="dark" variant="dark" sticky="top">
       <Container fluid className="header-container">
 
         {/* LOGO */}
@@ -48,49 +42,50 @@ function Header() {
           <img src={logowhite} alt="logo" className="header-logo" />
         </NavLink>
 
-        {/* RIGHT SIDE */}
-        <div className="header-right">
+        {/* TOGGLE BUTTON */}
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
-          {/* NAV LINKS */}
-          <Nav className="header-links">
+        {/* COLLAPSIBLE MENU */}
+        <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
+          <Nav className="header-links align-items-center">
+
+            {/* NAV LINKS */}
             <NavLink to="/" end className="nav-link">HOME</NavLink>
             <NavLink to="/aboutus" className="nav-link">ABOUT US</NavLink>
             <NavLink to="/ourservices" className="nav-link">OUR SERVICES</NavLink>
             <NavLink to="/blog" className="nav-link">BLOG</NavLink>
             <NavLink to="/shop" className="nav-link">SHOP</NavLink>
             <NavLink to="/contact" className="nav-link">CONTACT US</NavLink>
+
+            {/* SEARCH ICON */}
+            <CiSearch className="search-icon ms-3" />
+
+            {/* LOGIN / LOGOUT */}
+            {!isLoggedIn && (
+              <CiUser
+                className="login-icon ms-3"
+                title="Login"
+                onClick={() => navigate("/login")}
+              />
+            )}
+            {isLoggedIn && (
+              <AiOutlinePoweroff
+                className="logout-icon ms-3"
+                title="Logout"
+                onClick={handleLogout}
+              />
+            )}
+
+            {/* APPOINTMENT BUTTON */}
+            <button
+              className="appointment-btn ms-3"
+              onClick={handleAppointmentClick}
+            >
+              APPOINTMENT →
+            </button>
+
           </Nav>
-
-          {/* SEARCH ICON */}
-          <CiSearch className="search-icon" />
-
-          {/* LOGIN ICON */}
-          {!isLoggedIn && (
-            <CiUser
-              className="login-icon"
-              title="Login"
-              onClick={() => navigate("/login")}
-            />
-          )}
-
-          {/* LOGOUT ICON */}
-          {isLoggedIn && (
-            <AiOutlinePoweroff
-              className="logout-icon"
-              title="Logout"
-              onClick={handleLogout}
-            />
-          )}
-
-          {/* APPOINTMENT BUTTON */}
-          <button
-            className="appointment-btn"
-            onClick={handleAppointmentClick}
-          >
-            APPOINTMENT →
-          </button>
-
-        </div>
+        </Navbar.Collapse>
       </Container>
     </Navbar>
   );

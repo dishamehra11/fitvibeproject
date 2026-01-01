@@ -1,3 +1,4 @@
+/* ================= BASE STYLES ================= */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -31,12 +32,21 @@ body {
   border: none;
   cursor: pointer;
 }
-.appointment-btn :hover{
+
+.appointment-btn:hover {
   background: #0f0f0f;
 }
 
 /* HEADER */
-.header {
+/* ================= STICKY NAVBAR FIX ================= */
+.header-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+}
+
+/* ================= PAGE HEADER (BANNER) ================= */
+.page-header {
   background: url("https://images.unsplash.com/photo-1599058917212-950a3dc48ed7")
     center/cover no-repeat;
   height: 180px;
@@ -46,10 +56,11 @@ body {
   color: white;
   font-size: 32px;
   text-shadow: 1px 1px 4px black;
+  margin-top: 80px; /* sticky navbar height */
 }
 
-/* APPOINTMENT FORM LAYOUT */
-.container {
+/* ================= APPOINTMENT FORM LAYOUT ================= */
+.appointment-container {
   display: flex;
   justify-content: center;
   padding: 40px 20px;
@@ -62,6 +73,7 @@ body {
   overflow: hidden;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
   max-width: 900px;
+  width: 100%;
 }
 
 .img-section img {
@@ -105,7 +117,67 @@ body {
   cursor: pointer;
 }
 
-/* MAP SECTION */
+/* ================= MAP SECTION ================= */
 .map-section {
   margin-top: 40px;
 }
+
+/* ================= TABLET VIEW ================= */
+@media (max-width: 1024px) {
+  .page-header {
+    font-size: 28px;
+    height: 150px;
+  }
+
+  .appointment-card {
+    max-width: 700px;
+  }
+
+  .img-section img {
+    width: 200px;
+  }
+
+  .form-section {
+    padding: 20px;
+  }
+}
+
+/* ================= MOBILE VIEW ================= */
+@media (max-width: 768px) {
+  .page-header {
+    font-size: 24px;
+    height: 120px;
+  }
+
+  .appointment-container {
+    padding: 20px 10px;
+  }
+
+  .appointment-card {
+    flex-direction: column;
+  }
+
+  .img-section img {
+    width: 100%;
+    height: auto;
+  }
+
+  .form-section {
+    padding: 15px;
+  }
+}
+
+/* ================= SMALL MOBILE VIEW ================= */
+@media (max-width: 480px) {
+  .page-header {
+    font-size: 20px;
+    height: 100px;
+  }
+
+  .submit-btn {
+    padding: 10px 15px;
+  }
+}
+
+
+
